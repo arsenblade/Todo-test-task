@@ -1,0 +1,29 @@
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: 'Outfit', sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.indexPage {
+  max-width: 1410px;
+  min-width: 340px;
+  margin: 0 auto;
+
+  >button {
+    width: 200px;
+    margin: 0 auto;
+    margin-bottom: 10px;
+  }
+}
+

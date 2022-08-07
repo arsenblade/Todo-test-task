@@ -1,0 +1,135 @@
+@import '../../styles/variables.scss';
+
+.todoList {
+  display: grid;
+  grid-template-columns: repeat(4, 340px);
+  grid-template-rows: 280px;
+  row-gap: 8px;
+  column-gap: 8px;
+  justify-content: center;
+  align-items: flex-start;
+  padding-bottom: 40px;
+
+  @media (max-width: $desktop-width) {
+    grid-template-columns: repeat(3, 340px);
+  }
+
+  @media (max-width: $tablet-width) {
+    grid-template-columns: repeat(2, 320px);
+    grid-template-rows: 240px;
+  }
+
+  @media (max-width: $mobile-width) {
+    grid-template-columns: repeat(1, 320px);
+  }
+}
+
+.todoItem {
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+  align-items: center;
+  width: max-content;
+  box-shadow: 0px 0px 8px 0px rgba(34, 60, 80, 0.3);
+  padding: 20px;
+  border-radius: 2px;
+  opacity: 1;
+  background-color: white;
+
+  &:hover {
+    transform: scale(1.01);
+  }
+
+  &::before {
+    content: '';
+    width: 100%;
+    height: 20px;
+    border-radius: 2px;
+    background-color: #000099;
+    margin-bottom: 10px;
+  }
+
+  .btnContainer {
+    display: grid;
+    grid-template-columns: 145px 145px;
+    row-gap: 10px;
+    column-gap: 10px;
+
+    >button:last-child {
+      grid-column: 1 / 3;
+    }
+
+    @media (max-width: $tablet-width) {
+      grid-template-columns: 135px 135px;
+
+      >button {
+        font-size: 14px;
+        line-height: 22px;
+        padding: 6px 16px;
+      }
+    }
+  }
+
+  .todoDescription {
+    width: 300px;
+    height: 200px;
+    outline: none;
+    resize: none;
+    border: 1px solid #CCCCCC;
+    border-radius: 2px;
+    font-weight: 900;
+    font-size: 20px;
+    line-height: 26px;
+    padding: 6px 10px;
+
+    @media (max-width: $tablet-width) {
+      width: 280px;
+      height: 160px;
+      font-size: 16px;
+      line-height: 22px;
+    }
+  }
+
+  .todoDescriptionEdit {
+    height: 100px;
+
+    @media (max-width: $tablet-width) {
+      width: 280px;
+      height: 80px;
+    }
+  }
+}
+
+.todoCompleted {
+  &::before {
+    content: '';
+    width: 100%;
+    height: 20px;
+    border-radius: 2px;
+    background-color: #339900;
+    margin-bottom: 10px;
+  }  
+
+  .btnContainer {
+    >button {
+      grid-column: 1 / 3;
+    }
+  }
+}
+
+.todoUnfulfilled {
+  &::before {
+    content: '';
+    width: 100%;
+    height: 20px;
+    border-radius: 2px;
+    background-color: #000099;
+    margin-bottom: 10px;
+  } 
+}
+
+.todoEdit {
+  @media (max-width: $tablet-width) {
+    padding-bottom: 12px;
+  }
+}
